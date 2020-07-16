@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 RUN npm install
-RUN ng build --prod
+RUN npm build.prod
 
 FROM nginx
 COPY dist/my-app /usr/share/nginx/html/
