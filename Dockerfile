@@ -1,3 +1,10 @@
+FROM node:10-alpine as builder
+WORKDIR /usr/src/app
+
+COPY . .
+RUN npm install
+RUN npm run build:prod
+
 FROM nginx
 COPY dist/my-app /usr/share/nginx/html/
 EXPOSE 80
