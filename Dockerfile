@@ -1,9 +1,9 @@
-FROM node:10-alpine as builder
+FROM node as builder
 WORKDIR /usr/src/app
 
 COPY . .
 RUN npm install
-RUN npm build.prod
+RUN ng build --prod
 
 FROM nginx
 COPY dist/my-app /usr/share/nginx/html/
