@@ -1,8 +1,8 @@
 FROM node as builder
 WORKDIR /usr/src/app
 
-RUN npm install
 COPY . .
+RUN npm install
 RUN npm run build --prod
 
 FROM nginx
