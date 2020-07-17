@@ -1,9 +1,8 @@
 ### STAGE 1: Build ###
 FROM node as builder
 WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
-RUN npm install
 COPY . .
+RUN npm install
 RUN npm run build --prod
 
 ### STAGE 2: Run ###
