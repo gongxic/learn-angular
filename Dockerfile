@@ -6,6 +6,6 @@ RUN npm install
 RUN npm run build
 
 FROM nginx
-COPY --from=builder /usr/src/app/dist /usr/share/nginx/html/
-EXPOSE 80
+COPY --from=builder /usr/src/app/dist/my-app /usr/share/nginx/html/
+EXPOSE 4000
 CMD ["nginx", "-g", "daemon off;"]
