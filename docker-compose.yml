@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  learn-angular:
-    image: learn-angular
-    build: .
-    ports:
-      - 80:80
